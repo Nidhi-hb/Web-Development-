@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rapido Inspired</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+.navigation-bar{
+
+width:100%;
+height:80px;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0px 80px;
+position:sticky;
+top:0;
+
+}
+
+.logo{
+
+background:#FFD400;
+padding:12px 30px;
+font-size:22px;
+font-weight:bold;
+border-radius:35px;
+
+}
+
+.navigation-menu{
+
+display:flex;
+list-style:none;
+
+}
+
+.navigation-menu li{
+
+margin-left:35px;
+position:relative;
+
+}
+
+.navigation-menu li a{
+
+text-decoration:none;
+font-size:18px;
+color:black;
+font-weight:bold;
+
+}
+
+.navigation-menu li::after{
+
+content:"";
+position:absolute;
+left:0;
+bottom:-10px;
+width:0%;
+height:4px;
+background:black;
+transition:0.5s;
+
+}
+
+.navigation-menu li:hover::after{
+
+width:100%;
+
+}
+
+.active::after{
+
+width:100%;
+
+}
+
+.download-button{
+
+text-decoration:none;
+background:black;
+color:white;
+padding:15px 28px;
+border-radius:8px;
+font-weight:bold;
+
+}
+
+.download-button:hover{
+
+background:#FFD400;
+color:black;
+
+}
+
+
+
+.hero-section{
+
+width:90%;
+margin:50px auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.hero-left{
+
+width:48%;
+
+}
+
+.hero-left h1{
+
+font-size:72px;
+color:#222;
+line-height:85px;
+margin-bottom:20px;
+
+}
+
+.hero-left p{
+
+font-size:22px;
+color:#555;
+margin-bottom:35px;
+
+}
+
+.booking-box{
+
+width:100%;
+height:65px;
+border:1px solid gray;
+border-radius:12px;
+margin-bottom:18px;
+
+}
+
+.booking-box input{
+
+width:100%;
+height:100%;
+border:none;
+outline:none;
+font-size:18px;
+padding-left:20px;
+border-radius:12px;
+
+}
+
+.book-button{
+
+width:100%;
+height:70px;
+background:#FFD400;
+border:none;
+border-radius:12px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.book-button:hover{
+
+background:black;
+color:white;
+
+}
+
+.hero-right{
+
+width:48%;
+
+}
+
+.hero-image{
+
+width:100%;
+height:560px;
+
+}
+
+.hero-image img{
+
+width:100%;
+height:100%;
+border-radius:10px;
+
+}
+
+.services-section{
+
+width:90%;
+margin:80px auto;
+
+}
+
+.services-heading{
+
+font-size:60px;
+font-weight:bold;
+color:#333;
+margin-bottom:15px;
+
+}
+
+.heading-line{
+
+width:160px;
+height:5px;
+background:#FFD400;
+margin-bottom:45px;
+
+}
+
+.services-container{
+
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:35px;
+
+}
+
+.service-card{
+
+width:31%;
+height:180px;
+background:#f7f7f7;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0px 2px 8px rgba(0,0,0,0.05);
+transition:0.3s;
+
+}
+
+.service-card:hover{
+
+box-shadow:0px 8px 18px rgba(0,0,0,0.15);
+
+}
+
+.service-card img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+
+}
+
+/* PART 3 */
+
+.part3
+{
+    width:100%;
+    background:#2f568d;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:70px 80px;
+}
+
+.part3 .left
+{
+    width:45%;
+}
+
+.part3 .left img
+{
+    width:100%;
+    border-radius:30px;
+}
+
+.part3 .right
+{
+    width:40%;
+    color:white;
+}
+
+.part3 .right h1
+{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.line
+{
+    width:160px;
+    height:5px;
+    background:#ffca1c;
+    margin-bottom:40px;
+}
+
+.part3 .right p
+{
+    font-size:34px;
+    line-height:55px;
+    margin-bottom:50px;
+}
+
+.part3 .right button
+{
+    background:#ffca1c;
+    color:black;
+    border:none;
+    padding:20px 45px;
+    border-radius:40px;
+    font-size:28px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* PART 4 */
+
+.part4
+{
+    width:100%;
+    padding:70px 80px;
+    background:#f7f7f7;
+}
+
+.part4 h1
+{
+    font-size:60px;
+    color:black;
+    margin-bottom:20px;
+}
+
+.line2
+{
+    width:160px;
+    height:5px;
+    background:#ffca1c;
+    margin-bottom:60px;
+}
+
+.cards
+{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.card
+{
+    width:32%;
+}
+
+.card img
+{
+    width:100%;
+    height:380px;
+    border-radius:25px;
+    object-fit:cover;
+}
+
+.card h2
+{
+    margin-top:25px;
+    font-size:22px;
+    color:black;
+}
+
+.card p
+{
+    margin-top:15px;
+    font-size:18px;
+    line-height:35px;
+    color:#333;
+}
+
+/* PART 5 */
+
+.part5
+{
+    width:100%;
+    padding:70px 80px;
+    background:#f5f5f5;
+}
+
+.part5 h1
+{
+    text-align:center;
+    font-size:60px;
+}
+
+.line3
+{
+    width:160px;
+    height:5px;
+    background:#ffca1c;
+    margin:20px auto 60px;
+}
+
+.download
+{
+    display:flex;
+    justify-content:space-between;
+}
+
+.box1
+{
+    width:47%;
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+    box-shadow:0px 3px 8px gray;
+}
+
+.box1 img
+{
+    width:260px;
+}
+
+.box1 h2
+{
+    font-size:30px;
+    font-weight:normal;
+}
+
+/* PART 6 */
+
+.footer
+{
+    background:black;
+    color:white;
+    padding:60px 80px;
+}
+
+.footer1
+{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.footer h2
+{
+    margin-bottom:25px;
+}
+
+.footer p
+{
+    margin-bottom:18px;
+    font-size:20px;
+}
+
+.footer img
+{
+    width:180px;
+}
+
+.social
+{
+    display:flex;
+    gap:20px;
+    font-size:40px;
+    margin-top:30px;
+}
+
+hr
+{
+    margin-top:40px;
+    border:1px solid gray;
+}
+
+.copy
+{
+    text-align:center;
+    margin-top:30px;
+    color:gray;
+}
+
+@media (max-width:1024px)
+{
+.header
+{
+    padding:20px 40px;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.menu
+{
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.menu a
+{
+    font-size:18px;
+}
+
+.name
+{
+    font-size:35px;
+}
+
+.button1
+{
+    font-size:18px;
+    padding:12px 20px;
+}
+
+.left h1
+{
+    font-size:55px;
+    line-height:70px;
+}
+
+.left p
+{
+    font-size:25px;
+}
+
+.box
+{
+    height:70px;
+}
+
+.box input
+{
+    font-size:24px;
+}
+
+.button2
+{
+    height:80px;
+    font-size:30px;
+}
+
+.image
+{
+    height:420px;
+}
+}
+
+
+@media (max-width:768px)
+{
+.header
+{
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+.menu
+{
+    flex-direction:column;
+    gap:15px;
+    margin:20px 0;
+}
+
+.main
+{
+    flex-direction:column;
+}
+
+.left
+{
+    width:100%;
+    text-align:center;
+}
+
+.right
+{
+    width:100%;
+    margin-top:40px;
+}
+
+.left h1
+{
+    font-size:42px;
+    line-height:55px;
+}
+
+.left p
+{
+    font-size:22px;
+}
+
+.box
+{
+    height:60px;
+}
+
+.box input
+{
+    font-size:20px;
+}
+
+.button2
+{
+    height:70px;
+    font-size:28px;
+}
+
+.image
+{
+    width:100%;
+    height:350px;
+    border-radius:30px;
+}
+}
+
+
+@media (max-width:480px)
+{
+.name
+{
+    font-size:28px;
+    padding:10px 20px;
+}
+
+.menu a
+{
+    font-size:16px;
+}
+
+.button1
+{
+    font-size:16px;
+    padding:10px 18px;
+}
+
+.left h1
+{
+    font-size:32px;
+    line-height:42px;
+}
+
+.left p
+{
+    font-size:18px;
+}
+
+.box
+{
+    height:55px;
+}
+
+.box input
+{
+    font-size:18px;
+    padding-left:15px;
+}
+
+.button2
+{
+    height:60px;
+    font-size:22px;
+}
+
+.image
+{
+    height:250px;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<nav class="navigation-bar">
+
+<div class="logo">
+rapido
+</div>
+
+<ul class="navigation-menu">
+
+<li class="active"><a href="#">Home</a></li>
+
+<li><a href="#">About Us</a></li>
+
+<li><a href="#">Safety</a></li>
+
+<li><a href="#">Careers</a></li>
+
+<li><a href="#">Blog</a></li>
+
+<li><a href="#">Press</a></li>
+
+<li><a href="#">Contact Us</a></li>
+
+</ul>
+
+<a href="#" class="download-button">
+Download App
+</a>
+<div >
+
+</div>
+
+</nav>
+
+<section class="hero-section">
+
+<div class="hero-left">
+
+<h1>
+India's #1
+<br>
+Ride-Hailing App
+</h1>
+
+<p>
+Quick, Affordable and Safe rides at your doorstep.
+</p>
+
+<div class="booking-box">
+
+<input
+type="text"
+placeholder="Enter Pickup Location">
+
+</div>
+
+<div class="booking-box">
+
+<input
+type="text"
+placeholder="Enter Drop Location">
+
+</div>
+
+<button class="book-button">
+Book Ride
+</button>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-image">
+
+<img src="C:\Users\91767\Desktop\Webdbc\mockhtml\rpido.png" alt="Hero Image">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="services-section">
+
+<h1 class="services-heading">Our Services</h1>
+
+<div class="heading-line"></div>
+
+<div class="services-container">
+
+<div class="service-card">
+<img src="https://content-cus.rapido.bike/image/serviceimage.svg">
+</div>
+
+<div class="service-card">
+<img src="https://content-cus.rapido.bike/image/auto_service.png">
+</div>
+
+<div class="service-card">
+<img src="https://content-cus.rapido.bike/image/cab_service.png">
+</div>
+
+<div class="service-card">
+<img src="https://content-cus.rapido.bike/image/parcel_service.png">
+</div>
+
+<div class="service-card">
+<img src="https://content-cus.rapido.bike/image/travel_service.png">
+</div>
+
+<div class="service-card">
+<img src="https://content-cus.rapido.bike/image/metro_service.png">
+</div>
+
+</div>
+
+</section>
+</section>
+<div class="part4">
+
+<h1>What we offer</h1>
+
+<div class="line2"></div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="pickup.jpg" alt="Pickup">
+
+<h2>Quick Pickup</h2>
+
+<p>
+Pickups within minutes that help you save time on every ride.
+A Rapido is always nearby when you need to get moving.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="fare.jpg" alt="Fare">
+
+<h2>Best Fares</h2>
+
+<p>
+Affordable prices designed for everyday rides.
+Travel more, spend less without compromising on comfort.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="ride.jpg" alt="Ride">
+
+<h2>Never Too Far</h2>
+
+<p>
+Present across 400+ cities and counting.
+Wherever you go, find a Rapido ride close by.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="part3">
+
+<div class="left">
+
+<img src="earn-image.png" alt="Earn with Rapido">
+
+</div>
+
+<div class="right">
+
+<h1>Earn with Rapido</h1>
+
+<div class="line"></div>
+
+<p>
+Become a Rapido Captain. Ride when you want,
+work how you want, and earn on your own terms.
+</p>
+
+<button>Start Earning →</button>
+
+</div>
+
+</div>
+
+<div class="part5">
+
+<h1>Download Now</h1>
+
+<div class="line3"></div>
+
+<div class="download">
+
+<div class="box1">
+
+<img src="rapido-app.png" alt="">
+
+<h2>Bike-Taxi,<br>Auto & Cabs</h2>
+
+</div>
+
+<div class="box1">
+
+<img src="captain-app.png" alt="">
+
+<h2>Drive &<br>Earn</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="footer">
+
+<div class="footer1">
+
+<div>
+
+<h2>Customer app</h2>
+
+<img src="playstore.png"><br><br>
+
+<img src="appstore.png">
+
+</div>
+
+<div>
+
+<h2>Captain app</h2>
+
+<img src="playstore.png">
+
+</div>
+
+<div>
+
+<p>Home</p>
+
+<p>About Us</p>
+
+<p>Careers</p>
+
+<p>Safety</p>
+
+<p>Blog</p>
+
+<p>Press</p>
+
+<p>Privacy Policy</p>
+
+</div>
+
+<div>
+
+<p>Customer Terms - Bike Taxi</p>
+
+<p>Customer Terms - Cabs and Auto</p>
+
+<p>Corporate Affairs</p>
+
+<p>Captain Terms - Bike Taxi</p>
+
+<p>Captain Terms - Cabs and Auto</p>
+
+</div>
+
+<div>
+
+<h2>Follow Us</h2>
+
+<div class="social">
+
+<span>f</span>
+
+<span>in</span>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copy">
+© 2026 Roppen Transportation. All rights reserved.
+</p>
+
+</footer>
+
+</section>
+</body>
+</html>
